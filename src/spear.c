@@ -19,8 +19,12 @@ int main(){
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
   }
+  int maxi = 0;
+  for(i = 0; i < n; i++){
+    if (maxi <= A[i]) {maxi = A[i];}
+  }
   lb = 0;
-  ub = 1000000000;
+  ub = maxi;
   while (ub - lb > 1){
     int m = (ub + lb)/2 ;
     if (p(m)) {ub = m ;

@@ -13,12 +13,13 @@ if (A[i] > x) {return 0;}
 else if (sum == x) {sum = 0; count = count + 1;
 
 }
-else if (sum > x) {return 0 ;
+else if (sum > x) {count = count + 1 ; sum = sum - x;
 }
 
 
 }
 if (A[n - 1] > x) {return 0;}
+
 return count + 1 <= k;
 }
 
@@ -28,8 +29,16 @@ int main(){
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
   }
-  lb = 0;
-  ub = 10000;
+  int maxi = 0;
+  for (int i = 0; i < n; i++){
+    if (A[i] >= maxi) maxi = A[i];
+}
+int s = 0;
+for (i = 0; i < n; i++){
+  s = s + A[i];
+}
+  lb = maxi - 1;
+  ub = s;
   while (ub - lb > 1) {
   int m = (ub + lb) / 2 ;
   if (p(m)) {ub = m;
