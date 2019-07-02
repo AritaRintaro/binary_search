@@ -14,17 +14,17 @@ int p(int x){
 
 
 int main(){
-  int i, lb, ub;
+  int i, sumi, lb, ub;
   scanf("%d%d", &n, &k);
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
   }
-  int maxi = 0;
+  sumi = 0;
   for(i = 0; i < n; i++){
-    if (maxi <= A[i]) {maxi = A[i];}
+    sumi = sumi + A[i];
   }
   lb = 0;
-  ub = maxi;
+  ub = sumi/k + 1;
   while (ub - lb > 1){
     int m = (ub + lb)/2 ;
     if (p(m)) {ub = m ;
