@@ -14,14 +14,10 @@ int p(int x){
 
 
 int main(){
-  int i, sumi, lb, ub;
+  int i, lb, ub;
   scanf("%d%d", &n, &k);
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
-  }
-  sumi = 0;
-  for(i = 0; i < n; i++){
-    sumi = sumi + A[i];
   }
   lb = 0;
   ub = 1000000001;
